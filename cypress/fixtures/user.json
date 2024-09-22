@@ -1,0 +1,37 @@
+{
+    "users": [
+        {
+            "relationship": "SPOUSE",
+            "name": {
+                "first": "Kelly",
+                "last": "Smith"
+            },
+            "phone": "1112223333",
+            "hispanic": "MEXICAN",
+            "race": "NATIVE_HAWAIIAN",
+            "other": "COLLEGE"
+        },
+        {
+            "relationship": "PARTNER",
+            "name": {
+                "first": "Rama",
+                "last": "Jones"
+            },
+            "phone": "1112223333",
+            "hispanic": "MEXICAN",
+            "race": "NATIVE_HAWAIIAN",
+            "other": "COLLEGE"
+        },
+        {
+            "relationship": "SPOUSE",
+            "name": {
+                "first": "Joe",
+                "last": "Smith"
+            },
+            "phone": "1112223334",
+            "hispanic": "MEXICAN",
+            "race": "NATIVE_HAWAIIAN",
+            "other": "COLLEGE"
+        }
+    ]
+}

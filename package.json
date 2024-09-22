@@ -1,0 +1,19 @@
+{
+  "name": "cypressexamples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install cypress --save-dev"
+  },
+  "author": "ksharma",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.13.2",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
+  },
+  "keywords": [],
+  "description": ""
+}
