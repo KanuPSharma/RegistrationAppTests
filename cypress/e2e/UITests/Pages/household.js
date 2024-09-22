@@ -10,8 +10,8 @@ elements={
     btnDatePicker: () => cy.get("button[name='day']"),
     inputTele: () => cy.get("input[name='telephone']"),
     btnRole: () => cy.get("button[value='MALE']"),
-    btnHispanic: () => cy.get("button[role='combobox']").eq(1),
-    selectHispanic:() =>cy.get("select[name='hispanic']"),
+    btnIdentity: () => cy.get("button[role='combobox']").eq(1),
+    selectIdentity:() =>cy.get("select[name='hispanic']"),
     optionRace:() => cy.get("button[role='combobox']").eq(2),
     selectRace:()=>cy.get("select[name='race']"),
     inputRaceOther:()=>cy.get("input[name='raceOther']"),
@@ -21,7 +21,7 @@ elements={
     btnOK:() => cy.get('button').contains('OK')
 }
 
-addRecord(relationship,firstName,lastName,phone,hispanic,race,other) {
+addRecord(relationship,firstName,lastName,phone,Identity,race,other) {
     cy.wait(10000)
     this.elements.btnAddRecord2().click()
     this.elements.btnRelationship().click()   
@@ -32,8 +32,8 @@ addRecord(relationship,firstName,lastName,phone,hispanic,race,other) {
     this.elements.btnDatePicker().contains('5').click()
     this.elements.inputTele().type(phone)
     this.elements.btnRole().click()
-    this.elements.btnHispanic().click({force:true})    
-    this.elements.selectHispanic().select(hispanic,{force:true}).invoke('val').should('eq',hispanic)
+    this.elements.btnIdentity().click({force:true})    
+    this.elements.selectIdentity().select(hispanic,{force:true}).invoke('val').should('eq',hispanic)
     this.elements.optionRace().click({force:true})
     this.elements.selectRace().select(race,{force:true}).invoke('val').should('eq',race)
     this.elements.inputRaceOther().click({force:true})

@@ -7,7 +7,7 @@
                 "last": "Smith"
             },
             "phone": "1112223333",
-            "hispanic": "MEXICAN",
+            "identity": "MEXICAN",
             "race": "NATIVE_HAWAIIAN",
             "other": "COLLEGE"
         },
@@ -18,20 +18,10 @@
                 "last": "Jones"
             },
             "phone": "1112223333",
-            "hispanic": "MEXICAN",
-            "race": "NATIVE_HAWAIIAN",
-            "other": "COLLEGE"
-        },
-        {
-            "relationship": "SPOUSE",
-            "name": {
-                "first": "Joe",
-                "last": "Smith"
-            },
-            "phone": "1112223334",
-            "hispanic": "MEXICAN",
+            "identity": "MEXICAN",
             "race": "NATIVE_HAWAIIAN",
             "other": "COLLEGE"
         }
+        
     ]
 }
