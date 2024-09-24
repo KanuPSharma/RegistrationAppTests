@@ -35,7 +35,6 @@ Cypress.Commands.add('apiGet', (url) => {
         }
     }).then((resp) => {
         expect(resp.status).to.eq(200)
-
     }
     )
 
@@ -55,15 +54,12 @@ Cypress.Commands.add('apiDelete', (url) => {
 
     }
     )
-
 })
 Cypress.Commands.add('GenerateRandomNumber', (max, min) => {
     return Math.floor(Math.random() * (max - min) + min);
 
 })
 Cypress.Commands.add('apiPost', (url, payload, username, password) => {
-
-
     return cy.request({
         url: url,
         method: 'POST',
@@ -77,7 +73,4 @@ Cypress.Commands.add('apiPost', (url, payload, username, password) => {
     }).then((resp) => {
         expect(resp.status).to.eq(201)
     })
-})
-Cypress.Commands.add('dbQuery', () => {
-    return 
 })

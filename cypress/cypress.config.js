@@ -10,8 +10,9 @@ module.exports = defineConfig({
     saveAllAttempts: false,
   },
   e2e: {
-      url: 'http://localhost:3000/',
+      url: 'http://localhost:3000',
     setupNodeEvents(on, config) {
+         
       require('cypress-mochawesome-reporter/plugin')(on);
       on("task", {
         async connectDB(query) {
@@ -30,5 +31,7 @@ module.exports = defineConfig({
         },
       });
     },
+    
   },
+  
 });

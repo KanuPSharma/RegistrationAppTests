@@ -4,7 +4,7 @@ describe("DB verifications",()=>{
         const query = `select name from "User" where email ='fake.tester@example.com'`
         cy.task("connectDB",`${query}`).then((res)=>{
             expect(res).to.have.keys('name')
-            cy.log(resSubstring)
+            cy.log(res)
         });
     })
     

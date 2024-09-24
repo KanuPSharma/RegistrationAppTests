@@ -6,14 +6,14 @@ class register {
         btnSubmit: () => cy.get('button[name="sign-up-button"]'),
         ptextRegSuccess: () => cy.get('p'),
     }
-    checkElementsExist() {
+    checkRegisterPageElements() {
         this.elements.inputName().should('be.visible')
         this.elements.inputEmail().should('be.visible')
         this.elements.inputPassword().should('be.visible')
         this.elements.btnSubmit().should('be.visible')
     }
     registerUser() {
-        const uname = this.generateRandomString(3)
+        const uname = this.generateRandomString(4)
         Cypress.env('username',uname)
         cy.log('Username: '+`${Cypress.env('username')}`)
         this.elements.inputName().type(`${uname}`)
@@ -22,10 +22,6 @@ class register {
         this.elements.btnSubmit().click()
         cy.wait(5000)
         this.elements.ptextRegSuccess().should('be.visible')
-        const query = `select name from "User" where email = '${uname}@example.com'`
-        cy.task("connectDB",`${query}`).then((res)=>{
-            cy.log(res.name)            
-        })
     }
     
     generateRandomString(length) {

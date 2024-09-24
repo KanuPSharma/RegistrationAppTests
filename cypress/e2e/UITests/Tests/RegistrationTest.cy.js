@@ -1,18 +1,21 @@
 
 import register from "../Pages/register"
-
+import login from "../Pages/login"
 describe("Registration UI tests", () => {
 
-    beforeEach("Load Registration Page", () => {
-        cy.visit('http://localhost:3000/auth/register')
+    beforeEach("Load Login Page with registration link", () => {
+        cy.visit(Cypress.config('url')+'auth/login')
     })
-
-    it("Check Registration Page is Loaded", () => {
-        register.checkElementsExist()
+        
+    it("UI - Verify Registration page is loaded successfully",()=>{
+        login.clickRegisterUserLink()
+        register.checkRegisterPageElements()
     })
-
-    it("Check User can be registered", () => {
+    
+    it("UI - Verify a new user can be registered",()=>{
+        login.clickRegisterUserLink()
         register.registerUser()
+
     })
 
 })

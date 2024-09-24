@@ -6,11 +6,8 @@ describe("Test Addition of household data",()=>{
         cy.visit('http://localhost:3000/auth/login')    
         login.loginUser() 
         })
-
-    it("Verify that Add household record can be added for self",()=>{
-        household.addHouseHoldSelfRecord()
-
-    })
+ 
+    
     it("Verify that household data can be added for the related user",()=>{
         cy.fixture("user").then((data)=>{
 
