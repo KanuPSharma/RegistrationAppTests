@@ -1,4 +1,12 @@
 {
+    "login": {
+        "email": "demo_user@example.com",
+        "password": "Passcode1"
+    },
+    "addHouseholdLogin": {
+        "email": "fake.tester@example.com",
+        "password": "Passcode"
+    },
     "users": [
         {
             "relationship": "SPOUSE",

@@ -13,9 +13,10 @@ class login {
         this.elements.btnLogin().should('be.visible')
         this.elements.linkRegistration().should('be.visible')
     }
-    loginUser() {
-        this.elements.inputEmail().type('fake.tester@example.com')
-        this.elements.inputPassword().type('Passcode')
+    loginUser(username, password) {
+        
+        this.elements.inputEmail().type(username)
+        this.elements.inputPassword().type(password)
         this.elements.btnLogin().click()
     }
     loginInvalidCredentials(){

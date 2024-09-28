@@ -1,0 +1,19 @@
+{
+  "name": "registrationapptests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install cypress --save-dev"
+  },
+  "author": "ksharma",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "cypress": "^13.15.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
+  },
+  "keywords": [],
+  "description": "An example project for testing Registration app using Cypress. \r Page object model\r Includes UI and API tests\r Application is deployed in local for training purpose only. This project is to showcase example code and can't be executed without specific deployment and DB installation."
+}

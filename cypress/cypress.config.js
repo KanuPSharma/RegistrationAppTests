@@ -1,6 +1,13 @@
+
 const { defineConfig } = require("cypress");
 const { Client } = require("pg");
+const dotenv = require('dotenv');
+dotenv.config();
 module.exports = defineConfig({
+  defaultCommandTimeout: 60000,
+  pageLoadTimeout: 30000,
+  responseTimeout: 30000,
+  requestTimeout: 30000,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
@@ -10,9 +17,9 @@ module.exports = defineConfig({
     saveAllAttempts: false,
   },
   e2e: {
-      url: 'http://localhost:3000',
-    setupNodeEvents(on, config) {
-         
+      url: process.env.URL,     
+      email: process.env.EMAIL,          
+    setupNodeEvents(on, config) {        
       require('cypress-mochawesome-reporter/plugin')(on);
       on("task", {
         async connectDB(query) {

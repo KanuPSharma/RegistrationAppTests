@@ -13,9 +13,8 @@ class register {
         this.elements.btnSubmit().should('be.visible')
     }
     registerUser() {
-        const uname = this.generateRandomString(4)
-        Cypress.env('username',uname)
-        cy.log('Username: '+`${Cypress.env('username')}`)
+        const uname = this.generateRandomString(4)            
+        cy.log('Username: '+`${uname}`)
         this.elements.inputName().type(`${uname}`)
         this.elements.inputEmail().type(`${uname}@example.com`)
         this.elements.inputPassword().type('passcode1')
