@@ -4,7 +4,7 @@ class register {
         inputEmail: () => cy.get('input[name="email"]'),
         inputPassword: () => cy.get('input[name="password"]'),
         btnSubmit: () => cy.get('button[name="sign-up-button"]'),
-        ptextRegSuccess: () => cy.get('p'),
+        ptextRegSuccess: () => cy.get('p')
     }
     checkRegisterPageElements() {
         this.elements.inputName().should('be.visible')
