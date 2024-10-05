@@ -3,7 +3,9 @@ import login from "../Pages/login"
 describe("Test Addition of household data", () => {
 
     beforeEach("Launch Login Page", () => {
+        cy.log('Visit Login Page')
         cy.visit(Cypress.config('url')+'auth/login')
+        cy.url().should('include','auth/login')
     })
 
     it("Verify that household data can be added for the related user", () => {
