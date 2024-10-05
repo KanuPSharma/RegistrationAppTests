@@ -19,9 +19,9 @@ class login {
         this.elements.inputPassword().type(password)
         this.elements.btnLogin().click()
     }
-    loginInvalidCredentials(username,password){
-        this.elements.inputEmail().type(username)
-        this.elements.inputPassword().type(password)
+    loginInvalidCredentials(){
+        this.elements.inputEmail().type('fake.tester1@example.com')
+        this.elements.inputPassword().type('Passcode')
         this.elements.btnLogin().click()
         this.elements.txtErrorMessage().should('be.visible')
     }

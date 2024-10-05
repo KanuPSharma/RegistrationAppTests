@@ -7,10 +7,6 @@
         "email": "fake.tester@example.com",
         "password": "Passcode"
     },
-    "invalidUser":{
-        "email": "fake.tester1@example.com",
-        "password": "Passcode1"
-    },
     "users": [
         {
             "relationship": "SPOUSE",
@@ -35,7 +31,5 @@
             "other": "COLLEGE"
         }
         
-    ],
-    
-    "invalidPassword":"Morethantwentycharacters"
+    ]
 }
