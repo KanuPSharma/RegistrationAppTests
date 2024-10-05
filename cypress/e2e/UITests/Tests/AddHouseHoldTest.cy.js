@@ -8,6 +8,12 @@ describe("Test Addition of household data", () => {
 
     it("Verify that household data can be added for the related user", () => {
         cy.fixture("user").then((data) => {
+            const login_user = data.addHouseholdLogin
+            cy.log('Enter valid login credentials username:' + `${login_user.email}`)
+            login.loginUser(login_user.email, login_user.password)
+            cy.log('User can successfully login');
+          })
+        cy.fixture("user").then((data) => {
             const user1 = data.users[0]
             cy.log('Add household data for user 1')
             cy.wait(15000)

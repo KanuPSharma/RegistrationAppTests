@@ -19,7 +19,8 @@ module.exports = defineConfig({
   e2e: {
       url: process.env.URL,     
       email: process.env.EMAIL,          
-    setupNodeEvents(on, config) {        
+    setupNodeEvents(on, config) {   
+      //Reporter plugin     
       require('cypress-mochawesome-reporter/plugin')(on);
       on("task", {
         async connectDB(query) {
