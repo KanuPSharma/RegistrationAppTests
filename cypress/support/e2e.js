@@ -17,5 +17,3 @@
 import './commands'
 import 'cypress-mochawesome-reporter/register';
 ///<reference types='Cypress/>
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
