@@ -31,5 +31,10 @@
             "other": "COLLEGE"
         }
         
-    ]
+    ],
+    "invalidUser":{
+        "email": "fake.tester1@example.com",
+        "password": "Passcode1"
+    },
+     "invalidPassword":"Morethantwentycharacters"
 }
