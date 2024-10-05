@@ -26,7 +26,7 @@ class household {
     }
 
     addRecord(relationship, firstName, lastName, phone, identity, race, other) {
-        //Scroll the element into view
+        cy.log('Scroll the element into view')
         this.elements.btnAddRecord().scrollIntoView()
         this.elements.btnAddRecord().click()
         this.elements.btnRelationship().click()
