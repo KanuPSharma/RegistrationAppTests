@@ -4,11 +4,11 @@ class register {
         inputEmail: () => cy.get('input[name="email"]'),
         inputPassword: () => cy.get('input[name="password"]'),
         btnSubmit: () => cy.get('button[name="sign-up-button"]'),
-        ptextRegSuccess: () => cy.get('p'),
+        ptextRegSuccess: () => cy.get('p'),       
         ptextEmailError:() => cy.get('p').contains('has to be proper email format.'),
         ptextPasswordError:() => cy.get('p').contains('Maximum 20 characters.')
-        
     }
+    
     checkRegisterPageElements() {
         this.elements.inputName().should('be.visible')
         .and('have.prop','placeholder')

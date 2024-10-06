@@ -21,11 +21,12 @@ class household {
         btnOK: () => cy.get('button').contains('OK'),
         btnAddHousehold: () => cy.get('button').contains('Add household'),
         lnkDelete: (num) => cy.get(`:nth-child(${num}) > .w-full > .actions > [name="delete-record-button btn"]`),
-        lnkButtonDialog: () => cy.get('div[role="alertdialog"]').find('button').contains('Delete'),
+        lnkButtonDialog: () => cy.get('div[role="alertdialog"]').find('button').contains('Delete')
 
     }
 
-    addRecord(relationship, firstName, lastName, phone, identity, race, other) {        
+    addRecord(relationship, firstName, lastName, phone, identity, race, other) {
+        cy.log('Scroll the element into view')
         this.elements.btnAddRecord().scrollIntoView()
         this.elements.btnAddRecord().click()
         this.elements.btnRelationship().click()

@@ -3,14 +3,12 @@ import login from "../Pages/login"
 const uri = 'http://localhost:3000/'
 const uname = Cypress.config('email')
 describe("UI Login tests", () => {
-  beforeEach("Visit the webpage", () => {  
-    cy.log('Launch the website')  
-    cy.visit(Cypress.config('url')+'auth/login')
+  beforeEach("Visit the webpage", () => {
+    cy.visit('http://localhost:3000/auth/login')
     cy.url().should("include", "auth/login") 
   })
-
+  
   it("UI - Verify user can login with valid credentials", () => {
-
     cy.fixture("user").then((data) => {
       const login_user = data.login
       cy.log('Enter valid login credentials username:' + `${login_user.email}`)
@@ -21,11 +19,11 @@ describe("UI Login tests", () => {
 
   it("UI - Verify user cannot login with invalid credentials", () => {
     cy.fixture("user").then((data) => {
-    const invalid_login_user=data.invalidUser 
-    cy.log('Enter invalid login credentials username: ' + `${invalid_login_user.email}`)     
-    login.loginInvalidCredentials(invalid_login_user.email,invalid_login_user.password)
-    cy.log('Error message is displayed');
-    })
+      const invalid_login_user=data.invalidUser 
+      cy.log('Enter invalid login credentials username: ' + `${invalid_login_user.email}`)     
+      login.loginInvalidCredentials(invalid_login_user.email,invalid_login_user.password)
+      cy.log('Error message is displayed');
+      })
   })
 })
 

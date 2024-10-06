@@ -25,7 +25,7 @@ class login {
         this.elements.btnLogin().click()
         this.elements.txtErrorMessage().should('be.visible')
     }
-    loginUserwithCredentials(username,password){
+    loginUserwithValidCredentials(username,password){
         this.elements.inputEmail().type(username)
         this.elements.inputPassword().type(password)
         this.elements.btnLogin().click()
