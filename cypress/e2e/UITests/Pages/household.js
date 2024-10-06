@@ -63,7 +63,6 @@ class household {
                 cy.wait(3000)
             }
         })
-        
     }
 }
 module.exports = new household()
