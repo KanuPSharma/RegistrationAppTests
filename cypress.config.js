@@ -1,8 +1,8 @@
 
 const { defineConfig } = require("cypress");
 const { Client } = require("pg");
-const dotenv = require('dotenv');
-dotenv.config();
+//const dotenv = require('dotenv');
+//dotenv.config();
 module.exports = defineConfig({
   defaultCommandTimeout: 60000,
   pageLoadTimeout: 30000,
@@ -19,8 +19,7 @@ module.exports = defineConfig({
   e2e: {
       url: process.env.URL,     
       email: process.env.EMAIL,          
-    setupNodeEvents(on, config) {   
-      //Reporter plugin     
+    setupNodeEvents(on, config) {        
       require('cypress-mochawesome-reporter/plugin')(on);
       on("task", {
         async connectDB(query) {
