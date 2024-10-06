@@ -73,4 +73,10 @@ Cypress.Commands.add('apiPost', (url, payload, username, password) => {
     }).then((resp) => {
         expect(resp.status).to.eq(201)
     })
+
+    
+})
+Cypress.Commands.add('clickAndSelectByInvoke',(selector,val)=>{
+
+
 })
