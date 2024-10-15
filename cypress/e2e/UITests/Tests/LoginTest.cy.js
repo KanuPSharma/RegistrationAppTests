@@ -4,7 +4,7 @@ const uri = 'http://localhost:3000/'
 const uname = Cypress.config('email')
 describe("UI Login tests", () => {
   beforeEach("Visit the webpage", () => {
-    cy.visit('http://localhost:3000/auth/login')
+    cy.visit('/auth/login')
     cy.url().should("include", "auth/login") 
   })
   
@@ -17,12 +17,13 @@ describe("UI Login tests", () => {
     })
   })
 
-  it("UI - Verify user cannot login with invalid credentials", () => {
+  it("UI - Verify Error message is displated on login with invalid credentials", () => {
     cy.fixture("user").then((data) => {
       const invalid_login_user=data.invalidUser 
       cy.log('Enter invalid login credentials username: ' + `${invalid_login_user.email}`)     
       login.loginInvalidCredentials(invalid_login_user.email,invalid_login_user.password)
-      cy.log('Error message is displayed');
+      cy.log('Verify Error message is displayed');
+      login.elements.txtErrorMessage().should('be.visible')
       })
   })
 })

@@ -6,7 +6,7 @@ class register {
         btnSubmit: () => cy.get('button[name="sign-up-button"]'),
         ptextRegSuccess: () => cy.get('p'),       
         ptextEmailError:() => cy.get('p').contains('has to be proper email format.'),
-        ptextPasswordError:() => cy.get('p').contains('Maximum 20 characters.')
+        ptextPasswordError:(value) => cy.get('p').contains(value)
     }
     
     checkRegisterPageElements() {
@@ -20,8 +20,11 @@ class register {
         const uname = this.generateRandomString(4)            
         cy.log('Username: '+`${uname}`)
         this.elements.inputName().type(`${uname}`)
+        this.elements.inputName().should('have.value',`${uname}`)
         this.elements.inputEmail().type(`${uname}@example.com`)
+        this.elements.inputEmail().should('have.value',`${uname}@example.com`)
         this.elements.inputPassword().type('passcode1')
+        this.elements.inputPassword().should('have.value','passcode1')
         this.elements.btnSubmit().click()
         cy.wait(5000)
         this.elements.ptextRegSuccess().should('be.visible')
@@ -34,7 +37,7 @@ class register {
         this.elements.inputPassword().type(password)
         this.elements.btnSubmit().click()
         cy.wait(5000)
-        this.elements.ptextPasswordError().should('be.visible')
+        this.elements.ptextPasswordError('Maximum 20 characters.').should('be.visible')
     }
     generateRandomString(length) {
         const characters = 'ABCDEFGHIJK';
@@ -48,4 +51,4 @@ class register {
         return result;
     }  
 }
-module.exports = new register()//
+module.exports = new register()

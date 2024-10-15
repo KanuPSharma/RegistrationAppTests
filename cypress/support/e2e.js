@@ -14,8 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import addCustomCommands from './commands';
+
+addCustomCommands();
+//import './commands'
 import 'cypress-mochawesome-reporter/register';
-///<reference types='Cypress/>
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+//<reference types='Cypress/>
+
+
