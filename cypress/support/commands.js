@@ -23,6 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+export default function addCustomCommands() {
+    
 Cypress.Commands.add('apiGet', (url) => {
     cy.request({
         url: url,
@@ -80,3 +82,6 @@ Cypress.Commands.add('clickAndSelectByInvoke',(selector,val)=>{
 
 
 })
+
+// all the Cypress.Commands.add calls
+}

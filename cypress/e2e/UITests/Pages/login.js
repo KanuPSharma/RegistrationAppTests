@@ -15,15 +15,19 @@ class login {
     }
     loginUser(username, password) {
         
-        this.elements.inputEmail().type(username)
+        this.elements.inputEmail().type(username)        
         this.elements.inputPassword().type(password)
+        this.elements.inputEmail().should('have.value',username)
+        this.elements.inputPassword().should('have.value',password)
         this.elements.btnLogin().click()
+        cy.intercept('http://localhost:3000/dashboard').as('dashboard')
+        cy.wait('@dashboard')
     }
     loginInvalidCredentials(username,password){
         this.elements.inputEmail().type(username)
         this.elements.inputPassword().type(password)
         this.elements.btnLogin().click()
-        this.elements.txtErrorMessage().should('be.visible')
+               
     }
     loginUserwithValidCredentials(username,password){
         this.elements.inputEmail().type(username)

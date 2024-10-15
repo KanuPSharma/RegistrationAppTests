@@ -5,7 +5,7 @@ describe("Registration UI tests", () => {
 
     beforeEach("Load Login Page with registration link", () => {
         cy.log('Visit Login page')
-        cy.visit(Cypress.config('url')+'auth/login')
+        cy.visit('/auth/login')
       })
         
     it("UI - Verify Registration page is loaded successfully",()=>{

@@ -1,7 +1,7 @@
 const uri = 'http://localhost:3000/'
 describe("User API tests", () => {
   it("POST Login User expect response 200", () => {
-      const payload =  {'email': 'fake.tester@example.com',
+    const payload =  {'email': 'fake.tester@example.com',
       'password': 'Passcode'};
         cy.request({url: uri + 'api/auth/login',
         method: 'POST',
